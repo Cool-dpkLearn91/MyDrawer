@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void addDrawerItems() {
         String[] osArray = {"Android", "iOS", "Windows", "OS X", "Linux"};
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        mAdapter = new ArrayAdapter<String>(this, R.layout.mylayout, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
 
