@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/activity_main_rlmain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scn">
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/activity_main_rldrawer_view"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start" >
+
+
+    <ListView
+        android:id="@+id/activity_main_ll_navigation_list"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign out"
+            android:id="@+id/activity_main_btn_sign_out"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>
