@@ -9,8 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
     Button btnSignOut;
 
+    ImageView imageTriangle;
+
+    Animation animation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mActivityTitle = getTitle().toString();
 
+        imageTriangle = (ImageView)findViewById(R.id.activity_main_iv_tng);
+
         btnSignOut = (Button) findViewById(R.id.activity_main_btn_sign_out);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -50,6 +59,13 @@ public class MainActivity extends AppCompatActivity implements DrawerLayout.Draw
 
         setUpDrawer();
 
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_in);
+        imageTriangle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageTriangle.startAnimation(animation);
+            }
+        });
     }
 
     private void setUpDrawer() {
